@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>UPM :: Registro Metrovinculo</title>
+</head>
+<body>
+	<h1>Universidad Politécnica Metropolitana de Hidalgo</h1>
+	<h2>Metrovínculo</h2>
+	<h3>Registro de talleres y conferencias</h3>
+	<hr/>
+	<form id="frmRegistro" name="frmRegistro" method="post" action="#">		
+		<p>
+			<label>Tipo:</label>
+			<input type="radio" id="rdnTipo" name="rdnTipo"/>Conferencia
+			<input type="radio" id="rdnTipo" name="rdnTipo"/>Taller
+		</p>
+		<p>
+			<label>Título: </label>
+			<input type="text" size="80" id="txtTitulo" name="txtTitulo"/><br/>
+		</p>
+		<p>
+			<label>Ponente: </label>
+			<input type="text" size="50" id="txtPonente" name="txtPonente"/><br/>
+		</p>
+		<p>
+			<label>Teléfono: </label>
+			<input type="text" id="txtTelefonoPonente" name="txtTelefonoPonente" /><br/>
+		</p>
+		<p>
+			<label>Correo electrónico: </label>
+			<input type="text" id="txtCorreoPonente" name="txtCorreoPonente" size="40" /><br/>
+		</p>
+		<p>
+			<label>Fecha y hora: </label>
+			<select id="selDia" name="selDia">
+				<?php
+					for($i=1; $i<=31; $i++) {
+						echo "<option value=".$i.">".$i."</option>";
+					}
+				?>
+			</select>
+			<select id="selMes" name="selMes">
+				<option value="11">Noviembre</option>
+				<option value="12">Diciembre</option>
+			</select>
+			<input type="text" id="txtAnio" name="txtAnio" size="4" />&nbsp;&nbsp;
+			<input type="text" id="txtHora" name="txtHora" size="2"> : <input type="text" id="txtMinutos" name="txtMinutos" size="2">
+		</p>
+		<p>
+			<label>Lugar: </label>
+			<input type="text" id="txtLugar" name="txtLugar" size="50" />
+		</p>
+		<input type="submit" id="sbmRegistrar" name="sbmRegistrar" value="Registrar" />
+	</form>
+</body>
+</html>

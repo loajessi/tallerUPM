@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>UPM :: Registro Metrovinculo</title>
+<link rel="stylesheet" type="text/css" href="../_estilo/upm.css">
+</head>
+<body>
+<div id="contenido">
+	<div id="encabezado">
+		<div style="float:left; width=20%">
+			<img src="../_img/escudoUPM.jpg" width="50%" height="50%">
+		</div>
+		<div>
+			<h1>Universidad Politécnica Metropolitana de Hidalgo</h1>
+			<h2>Metrovínculo</h2>
+		</div>		
+	</div><br/>
+	<h3>Registro de talleres y conferencias</h3>
+	<hr/>
+	<form id="frmRegistro" name="frmRegistro" method="post" action="#">		
+		<p>
+			<label>Tipo: </label>
+			<input type="radio" id="rdnTipo" name="rdnTipo" required />Conferencia
+			<input type="radio" id="rdnTipo" name="rdnTipo" required />Taller
+		</p>
+		<p>
+			<label>Título: </label>
+			<input type="text" size="80" id="txtTitulo" name="txtTitulo" required /><br/>
+		</p>
+		<p>
+			<label>Fecha: </label>
+			<select id="selDia" name="selDia" required>
+				<option value=""></option>
+				<?php
+					for($i=1; $i<=31; $i++) {
+						echo "<option value=".$i.">".$i."</option>";
+					}
+				?>
+			</select>
+			<select id="selMes" name="selMes" required>
+				<option value=""></option>
+				<option value="11">Noviembre</option>
+				<option value="12">Diciembre</option>
+			</select>
+			<input type="text" id="txtAnio" name="txtAnio" size="4" required />&nbsp;&nbsp;
+			<input type="text" id="txtHora" name="txtHora" size="2" required /> : <input type="text" id="txtMinutos" name="txtMinutos" size="2" required />
+		</p>
+		<p>
+			<label>Lugar: </label>
+			<input type="text" id="txtLugar" name="txtLugar" size="50" required />
+		</p>
+		<fieldset>
+			<legend>Datos del ponente</legend>
+			<p>
+				<label>Nombre completo: </label>
+				<input type="text" size="50" id="txtPonente" name="txtPonente" required /><br/>
+			</p>
+			<p>
+				<label>Teléfono: </label>
+				<input type="text" id="txtTelefonoPonente" name="txtTelefonoPonente" /><br/>
+			</p>
+			<p>
+				<label>Correo electrónico: </label>
+				<input type="email" id="emCorreoPonente" name="emCorreoPonente" size="40" required /><br/>
+			</p>
+		</fieldset>
+		<br/>
+		<input type="submit" id="sbmRegistrar" name="sbmRegistrar" value="Registrar" />
+	</form>
+</div>
+</body>
+</html>

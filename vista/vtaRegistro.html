@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>UPM :: Registro Metrovinculo</title>
+<!-- Estilos -->
+<link rel="stylesheet" type="text/css" href="../_estilo/upm.css">
+<link rel="stylesheet" href="../_jscript/jqwidgets/styles/jqx.base.css" type="text/css" />
+
+<!-- Librerías -->
+<script type="text/javascript" src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+<script type="text/javascript" src="../_jscript/jqwidgets/jqxcore.js"></script>
+
+<script type="text/javascript" src="../_jscript/jqwidgets/jqxinput.js"></script>
+
+<script type="text/javascript" src="../_jscript/jqwidgets/jqxdatetimeinput.js"></script>
+<script type="text/javascript" src="../_jscript/jqwidgets/jqxcalendar.js"></script>
+<script type="text/javascript" src="../_jscript/jqwidgets/jqxtooltip.js"></script>
+<script type="text/javascript" src="../_jscript/jqwidgets/globalization/globalize.js"></script>
+
+<script type="text/javascript" src="../_jscript/jqwidgets/jqxmaskedinput.js"></script>
+
+<script type="text/javascript" src="../_jscript/jqwidgets/jqxbuttons.js"></script>
+
+<!-- Controlador -->
+<script type="text/javascript" src="../controlador/ctrlRegistro.js"></script>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+    	ponenciaEdicionInicializar();
+    });
+</script>
+</head>
+<body>
+<div id="contenido">
+	<div id="encabezado">
+		<div style="float:left; width=20%">
+			<img src="../_img/escudoUPM.jpg" width="50%" height="50%">
+		</div>
+		<div>
+			<h1>Universidad Politécnica Metropolitana de Hidalgo</h1>
+			<h2>Metrovínculo</h2>
+		</div>		
+	</div><br/>
+	<h3>Registro de talleres y conferencias</h3>
+	<hr/>
+	<form id="frmRegistro" name="frmRegistro" method="post" action="#">		
+		<p>
+			<label>Tipo: </label>
+			<input type="radio" id="rdnTipo" name="rdnTipo" value="C" required />Conferencia
+			<input type="radio" id="rdnTipo" name="rdnTipo" value="T" required />Taller
+		</p>
+		<p>
+			<label>Título: </label>
+			<input type="text" id="jqxInput_Titulo" name="jqxInput_Titulo" size="80" required /><br/>
+		</p>
+		<p>
+			<label style="float: left;">Fecha y hora: &nbsp;</label>
+			<div id="jqxDateTimeInput_FechaHora" name="jqxDateTimeInput_FechaHora"></div>
+		</p>
+		<p>
+			<label>Lugar: </label>
+			<input type="text" id="jqxInput_Lugar" name="jqxInput_Lugar" size="50" required />
+		</p>
+		<fieldset>
+			<legend>Datos del ponente</legend>
+			<p>
+				<label>Nombre completo: </label>
+				<input type="text" size="100" id="jqxInput_Ponente" name="jqxInput_Ponente" required /><br/>
+			</p>
+			<p>
+				<label>Teléfono: </label>
+				<input id="jqxMaskedInput_TelefonoPonente" name="jqxMaskedInput_TelefonoPonente" /><br/>
+			</p>
+			<p>
+				<label>Correo electrónico: </label>
+				<input type="email" id="jqxInput_CorreoPonente" name="jqxInput_CorreoPonente" size="60" required /><br/>
+			</p>
+		</fieldset>
+		<br />
+		<div align="center">
+			<input type="hidden" id="hdnPonenciaID" name="hdnPonenciaID" value="0" />
+			<input type="button" id="jqxButton_Registrar" name="jqxButton_Registrar" value="Registrar" />
+		</div>
+	</form>
+</div>
+</body>
+</html>
